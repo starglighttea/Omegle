@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temu Omegle - Connect with Strangers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header id="app-header">
+    <div class="logo">
+      <h1>Temu<span>Omegle</span></h1>
+      <p id="online-count"><strong>1,402</strong> strangers online</p>
+    </div>
+    <div class="header-actions">
+      <select id="country-select">
+        <option value="Worldwide 🌐">Worldwide 🌐</option>
+        <option value="United States 🇺🇸">United States 🇺🇸</option>
+        <option value="United Kingdom 🇬🇧">United Kingdom 🇬🇧</option>
+        <option value="Germany 🇩🇪">Germany 🇩🇪</option>
+      </select>
+    </div>
+  </header>
+
+  <main id="stage">
+    <!-- Video Cams Column -->
+    <section id="video-grid">
+      <div class="cam-box">
+        <div class="cam-label">STRANGER <span id="stranger-status">OFFLINE</span></div>
+        <video id="remote-video" autoplay playsinline></video>
+        <div id="loader" class="hidden">
+          <div class="spinner"></div>
+          <p>Looking for someone...</p>
+        </div>
+      </div>
+      <div class="cam-box">
+        <div class="cam-label">YOU</div>
+        <video id="local-video" autoplay playsinline muted></video>
+      </div>
+    </section>
+
+    <!-- Chat Column -->
+    <section id="chat-panel">
+      <div id="chat-log">
+        <p class="msg-system">Welcome to Temu Omegle! Click <strong>"Skip / Start"</strong> to pair with a stranger.</p>
+      </div>
+      <div id="typing-indicator" class="hidden">Stranger is typing...</div>
+      <div id="chat-controls">
+        <button id="skip-btn" class="btn-primary">Start</button>
+        <input type="text" id="chat-input" placeholder="Type a message..." disabled />
+        <button id="send-btn" class="btn-accent" disabled>Send</button>
+      </div>
+    </section>
+
+    <!-- Temu Ads Panel -->
+    <aside id="ad-sidebar">
+      <div class="ad-title">Sponsored Deals</div>
+      <div class="ad-card" style="background: linear-gradient(135deg, #ff471a, #ff8533);">
+        <h4>🔥 TEMU SPECIAL</h4>
+        <p>Get 99% OFF Wireless Earbuds! Only $0.79!</p>
+        <button onclick="window.open('https://temu.com','_blank')">CLAIM NOW</button>
+      </div>
+      <div class="ad-card" style="background: linear-gradient(135deg, #11998e, #38ef7d);">
+        <h4>🎁 FREE GIFT BAG</h4>
+        <p>Spin the wheel to claim your $100 coupon bundle!</p>
+        <button onclick="window.open('https://temu.com','_blank')">SPIN WHEEL</button>
+      </div>
+    </aside>
+  </main>
+
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
